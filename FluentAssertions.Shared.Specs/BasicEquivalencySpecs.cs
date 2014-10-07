@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -500,7 +501,7 @@ namespace FluentAssertions.Specs
                 {
                     return
                         n.ToString(
-                            System.Globalization.CultureInfo.InvariantCulture);
+                            CultureInfo.InvariantCulture);
                 }
             }
         }
@@ -1946,7 +1947,7 @@ namespace FluentAssertions.Specs
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var actual = new CyclicRootWithValueObject()
+            var actual = new CyclicRootWithValueObject
             {
                 Object = new ValueObject("MyValue")
             };
@@ -1957,7 +1958,7 @@ namespace FluentAssertions.Specs
                 Root = null,
             };
 
-            var expectation = new CyclicRootWithValueObject()
+            var expectation = new CyclicRootWithValueObject
             {
                 Object = new ValueObject("MyValue")
             };
@@ -2223,13 +2224,10 @@ namespace FluentAssertions.Specs
             {
                 if (context.Subject is DateTime)
                 {
-                    ((DateTime)context.Subject).Should().BeCloseTo((DateTime)context.Expectation, 1000 * 60);
+                    ((DateTime) context.Subject).Should().BeCloseTo((DateTime) context.Expectation, 1000*60);
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
         }
 
@@ -2594,11 +2592,11 @@ namespace FluentAssertions.Specs
             {
                 return true;
             }
-            if (obj.GetType() != this.GetType())
+            if (obj.GetType() != GetType())
             {
                 return false;
             }
-            return Equals((ClassWithValueSemanticsOnSingleProperty)obj);
+            return Equals((ClassWithValueSemanticsOnSingleProperty) obj);
         }
 
 
