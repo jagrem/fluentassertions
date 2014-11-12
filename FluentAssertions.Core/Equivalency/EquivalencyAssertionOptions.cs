@@ -27,6 +27,7 @@ namespace FluentAssertions.Equivalency
 
         public EquivalencyAssertionOptions()
         {
+
         }
 
         internal EquivalencyAssertionOptions(IEquivalencyAssertionOptions defaults) : base(defaults)
@@ -89,7 +90,7 @@ namespace FluentAssertions.Equivalency
     /// </summary>
     public class EquivalencyAssertionOptions : EquivalencyAssertionOptionsBase<EquivalencyAssertionOptions>
     {
-        internal EquivalencyAssertionOptions()
+        public EquivalencyAssertionOptions()
         {
             IncludingNestedObjects();
             IncludingAllDeclaredProperties();
