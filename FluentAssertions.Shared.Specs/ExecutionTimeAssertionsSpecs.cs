@@ -37,7 +37,7 @@ namespace FluentAssertions.Specs
         }
 
         [TestMethod]
-        public void When_the_execution_time_of_a_meber_stays_within_the_maximum_it_should_not_throw()
+        public void When_the_execution_time_of_a_member_stays_within_the_maximum_it_should_not_throw()
         {
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
